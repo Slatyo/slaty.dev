@@ -5,7 +5,7 @@ import HeaderComponent from "@/Components/HeaderComponent.vue";
 
 <template>
     <div
-        class="min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-green-600 selection:text-white"
+        class="min-h-screen bg-dots-darker bg-center bg-gray-100 bg-gray-900 selection:bg-green-600 selection:text-white"
     >
         <HeaderComponent />
 
