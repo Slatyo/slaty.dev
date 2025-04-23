@@ -9,9 +9,9 @@ use RuntimeException;
 class SatisfactoryApiService
 {
     /**
-     * @var string
+     * @var string|null
      */
-    protected string $host;
+    protected string|null $host;
 
     /**
      * @var string
