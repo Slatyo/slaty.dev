@@ -100,16 +100,6 @@ const deployments = [
         environment: 'Online',
     },
     {
-        id: 3,
-        href: 'https://the-frenchies-family.com/',
-        projectName: 'the-frenchies-family.com',
-        teamName: 'Slaty',
-        status: 'online',
-        statusText: 'Simple self-made CMS',
-        description: 'The Frenchies Family',
-        environment: 'Online',
-    },
-    {
         id: 4,
         href: 'https://github.com/Slatyo/slaty.dev',
         projectName: 'slaty.dev',
@@ -120,16 +110,6 @@ const deployments = [
         environment: 'Online',
     },
     {
-        id: 5,
-        href: '',
-        projectName: 'Samyaza',
-        teamName: 'Slaty',
-        status: 'offline',
-        statusText: 'A roguelike in Godot',
-        description: 'In development',
-        environment: 'On hold',
-    },
-    {
         id: 6,
         href: 'https://github.com/Slatyo/laravel-pokemontcg',
         projectName: 'Laravel Pokemontcg',
@@ -138,16 +118,6 @@ const deployments = [
         statusText: '',
         description: 'Opensource simple API laravel wrapper for Pokemontcg with a sleek model design.',
         environment: 'Online',
-    },
-    {
-        id: 6,
-        href: '',
-        projectName: 'Enshrouded',
-        teamName: 'Roots',
-        status: 'offline',
-        statusText: '',
-        description: 'A managed Enshrouded server for Roots',
-        environment: 'On hold',
     },
 ]
 
