@@ -33,6 +33,8 @@ return [
 
     'satisfactory' => [
         'password' => env('SATISFACTORY_ADMIN_PASSWORD'),
+        'pioneer' => env('SATISFACTORY_PIONEER'),
+        'hogzilla' => env('SATISFACTORY_HOGZILLA'),
     ]
 
 ];
