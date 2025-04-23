@@ -26,8 +26,8 @@ class SatisfactoryApiService
     public function __construct()
     {
         $resolvedHost = match (request()->route('satisfactory')) {
-            'pioneer' => 'https://slaty.dev:7797',
-            'hogzilla' => 'https://slaty.dev:7787',
+            'pioneer' => env('SATISFACTORY_PIONEER'),
+            'hogzilla' => env('SATISFACTORY_HOGZILLA'),
             default => null,
         };
 
