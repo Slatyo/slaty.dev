@@ -19,7 +19,7 @@ import TypewriterComponent from "@/Components/TypewriterComponent.vue";
             typed-value-classes="text-gray-500"
             :display-text-array="['I create things.', 'I destroy things.']"
           >
-            Hello,
+            Sometimes,
           </TypewriterComponent>
         </div>
       </div>

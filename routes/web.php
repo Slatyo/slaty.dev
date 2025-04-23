@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SatisfactoryController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -23,17 +24,11 @@ Route::get('/documentation', function () {
     return Inertia::render('Documentation');
 })->name('documentation.overview');
 
-Route::get('/library', function () {
-    return Inertia::render('Library');
-})->name('library.overview');
-
-Route::get('/fishing', function () {
-    return Inertia::render('Fishing');
-})->name('fishing.overview');
-
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::resource('satisfactory', SatisfactoryController::class)->only(['index', 'show']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

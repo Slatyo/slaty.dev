@@ -31,4 +31,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'satisfactory' => [
+        'password' => env('SATISFACTORY_ADMIN_PASSWORD'),
+    ]
+
 ];
