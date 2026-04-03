@@ -1,6 +1,6 @@
 # slaty.dev — GOAL.md
 
-Personal developer portfolio and project showcase site. Laravel 12 + Inertia.js + Vue 3 + Tailwind CSS 3. Has auth (Breeze), a Satisfactory game server dashboard, and a documentation page.
+Personal developer site. Clean, dark, minimal. Shows projects and contact info. Nothing else.
 
 **Branch:** `topic/improvements`
 **Production:** slaty.dev (Laravel Forge, auto-deploys from `main`)
@@ -15,88 +15,87 @@ Personal developer portfolio and project showcase site. Laravel 12 + Inertia.js 
 
 ---
 
-## 📋 Active TODOs
+## 🔴 Rebuild: Fresh Single-Page Portfolio Site
 
-### 🟠 Upgrade: Old Laravel Skeleton (Pre-12 Bootstrap)
+Strip everything down to a fresh Laravel 12 + Blade + Tailwind site. One page, dark theme, no auth, no SPA framework.
 
-The project uses the old `bootstrap/app.php` format with `$app = new Application()` and separate `App\Http\Kernel`, `App\Console\Kernel`, `App\Exceptions\Handler` classes. Laravel 12 uses the new streamlined bootstrap. This prevents some newer packages (like Laravel Boost) from working correctly.
+### Phase 1 — Clean Slate
 
-- [ ] Migrate `bootstrap/app.php` to the new Laravel 12 format using `Application::configure()`
-- [ ] Remove `App\Http\Kernel` — move middleware to `bootstrap/app.php`
-- [ ] Remove `App\Console\Kernel` — move schedule to `routes/console.php`
-- [ ] Remove `App\Exceptions\Handler` — move exception handling to `bootstrap/app.php`
-- [ ] Remove unused service providers (`BroadcastServiceProvider`, `EventServiceProvider`, `AuthServiceProvider`, `RouteServiceProvider`) if they only contain defaults
-- [ ] Run `php artisan test` — verify nothing broke
-- [ ] Run `npm run build` — verify frontend still works
+- [ ] Remove all Inertia.js, Vue, Breeze auth scaffolding, Satisfactory integration
+- [ ] Remove: `resources/js/Pages/`, `app/Services/SatisfactoryApiService.php`, `app/Http/Controllers/SatisfactoryController.php`, `app/Http/Controllers/Auth/`, `app/Http/Controllers/ProfileController.php`
+- [ ] Remove all auth routes from `routes/web.php` and `routes/auth.php`
+- [ ] Remove: `app/Http/Kernel.php`, `app/Console/Kernel.php`, `app/Exceptions/Handler.php` — migrate to Laravel 12 `bootstrap/app.php` format
+- [ ] Remove unused providers: `BroadcastServiceProvider`, `EventServiceProvider`, `AuthServiceProvider`, `RouteServiceProvider`
+- [ ] Remove `@inertiajs/vue3`, `vue`, `@vitejs/plugin-vue` from `package.json`
+- [ ] Clean up `composer.json` — remove `laravel/breeze` if no longer needed
+- [ ] `routes/web.php` becomes just: `Route::get('/', fn () => view('welcome'))->name('home');`
+- [ ] Run `php artisan test` (update/remove broken tests)
+- [ ] Run `npm run build`
+
+### Phase 2 — Build the Page
+
+Single `welcome.blade.php` with these sections in order:
+
+**Header area:**
+- Name: **Slaty**
+- One word or short tagline — "Developer & Crafter" (keep it neutral)
+
+**Projects grid:**
+4 cards, clean layout, each with:
+- Project name
+- One-line description
+- Small tech badges (muted)
+- Link to live site
+- Link to GitHub repo
+
+Projects:
+- **Wisper** — "Private messaging with end-to-end encryption." → wisper.life | github.com/Slatyo/wisper
+- **Possessly** — "Inventory tracking for collectors and businesses." → possessly.com | github.com/Slatyo/Possessly
+- **Haus & Garten Siegerland** — "Business website for property services." → hausundgarten-siegerland.de | github.com/Slatyo/hausundgarten-siegerland
+- **slaty.dev** — "This site." → slaty.dev | github.com/Slatyo/slaty.dev
+
+The grid must be easy to extend (add more cards later).
+
+**Contact:**
+- "info@slaty.dev" as a mailto link
+- GitHub: github.com/Slatyo
+- No contact form, no "hire me", no pitch — just the info
+
+**No about section. No life story. No buzzwords.**
+
+- [ ] Create `resources/views/welcome.blade.php` — single file, all sections
+- [ ] Dark theme: background `#0A0A0B`, text `#E4E4E7`, one subtle accent color for links
+- [ ] System font stack (no web fonts)
+- [ ] Fully responsive (mobile-first)
+- [ ] Subtle CSS animations only: section fade-in on scroll, card hover scale (1.02x), hero text fade on load
+- [ ] No JavaScript framework — pure Blade + Tailwind + vanilla JS for scroll observer
+
+### Phase 3 — SEO & Meta
+
+- [ ] `<title>Slaty — Developer & Crafter</title>`
+- [ ] `<meta name="description" content="Developer portfolio. Wisper, Possessly, and more.">`
+- [ ] OG tags: og:title, og:description, og:url (`https://slaty.dev`)
+- [ ] Favicon (simple SVG in `public/`)
+- [ ] JSON-LD Person schema with name + url + sameAs (GitHub link)
+- [ ] Lighthouse target: 95+ all categories
+
+### Phase 4 — Cleanup
+
+- [ ] Remove all unused test files that reference auth/Satisfactory
+- [ ] Remove `resources/js/Pages/` directory entirely (no more Vue pages)
+- [ ] Remove `Documentation.vue`, `Satisfactory.vue`, `Dashboard.vue`, all auth pages
+- [ ] Verify `npm run build` produces a clean bundle (Tailwind CSS only, no Vue)
+- [ ] Final `php artisan test` — green
+- [ ] Commit + push
 
 ---
 
-### 🟠 Improve: Welcome/Portfolio Page Content
-
-The Welcome page is the landing page at slaty.dev. Verify it showcases your projects and skills effectively.
-
-- [ ] Review `resources/js/Pages/Welcome.vue` — does it list your projects (Wisper, Possessly)?
-- [ ] Add links to live projects and GitHub repos
-- [ ] Add a brief "About me" section
-- [ ] Ensure responsive design works on mobile
-- [ ] Check that the page loads fast (Lighthouse)
-
----
-
-### 🟡 Fix: Satisfactory Service Constructor Uses Route Parameter
-
-`SatisfactoryApiService` resolves the host in the constructor using `request()->route('satisfactory')`. This is fragile — it fails outside of HTTP context (artisan commands, tests, queues).
-
-- [ ] Refactor: accept `$serverName` as a constructor parameter instead of reading from request
-- [ ] Inject the server name from the controller: `new SatisfactoryApiService($serverName)`
-- [ ] Or: use a factory/method approach: `SatisfactoryApiService::forServer('pioneer')`
-- [ ] Run `php artisan test`
-
----
-
-### 🟡 Missing: Documentation Page Content
-
-`/documentation` route renders `Documentation.vue` but it may be empty or placeholder content.
-
-- [ ] Review `resources/js/Pages/Documentation.vue`
-- [ ] If it's a placeholder, either add real content (API docs for your projects, dev notes) or remove the route
-- [ ] If keeping it, make sure it's linked from the navigation
-
----
-
-### 🟡 Code Quality: Remove Unused Auth Scaffolding
-
-Breeze installed a full auth flow (login, register, password reset, email verification, profile edit). If this site only needs login for the Satisfactory dashboard and nothing else, remove the unused parts.
-
-- [ ] Check if registration is needed — if not, remove `register` route and page
-- [ ] Check if password reset is needed — if not, remove those routes
-- [ ] Check if email verification is needed — if not, remove that middleware
-- [ ] Keep login + profile if the dashboard requires auth
-
----
-
-### 🟢 Quick Win: SEO — Meta Tags + OG Tags
-
-- [ ] Add `<meta name="description">` to the layout
-- [ ] Add OG tags for the Welcome page (og:title, og:description)
-- [ ] Add a favicon if not present
-
----
-
-### 🟢 Quick Win: Error Pages
-
-- [ ] `resources/js/Pages/Error/404.vue` and `500.vue` exist — verify they match site design
-- [ ] Add a link back to home from each error page
-
----
-
-## 🏗️ Tech Stack
+## 🏗️ Tech Stack (Target)
 
 | Layer | Tech |
 |---|---|
-| Backend | Laravel 12, PHP 8.4, Inertia.js |
-| Frontend | Vue 3, Tailwind CSS 3, Vite 4 |
-| Auth | Laravel Breeze + Sanctum |
-| Features | Satisfactory game server dashboard |
+| Backend | Laravel 12, PHP 8.4 |
+| Frontend | Blade + Tailwind CSS 4 |
+| JS | Vanilla (scroll observer only) |
 | Deployment | Laravel Forge (auto-deploy on main) |
 | Domain | slaty.dev |
