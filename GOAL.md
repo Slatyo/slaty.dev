@@ -12,6 +12,7 @@ Personal developer site. Clean, dark, minimal. Shows projects and contact info. 
 1. `php artisan test` — all tests must pass
 2. `npm run build` — Vite build must succeed
 3. Commit + push to `topic/improvements`
+4. **No GitHub links to private repositories.** Only slaty.dev itself is public. Wisper, Possessly, and Haus & Garten repos are private — do NOT link to their GitHub repos on the site. Link to their live URLs only.
 
 ---
 
@@ -49,10 +50,10 @@ Single `welcome.blade.php` with these sections in order:
 - Link to GitHub repo
 
 Projects:
-- **Wisper** — "Private messaging with end-to-end encryption." → wisper.life | github.com/Slatyo/wisper
-- **Possessly** — "Inventory tracking for collectors and businesses." → possessly.com | github.com/Slatyo/Possessly
-- **Haus & Garten Siegerland** — "Business website for property services." → hausundgarten-siegerland.de | github.com/Slatyo/hausundgarten-siegerland
-- **slaty.dev** — "This site." → slaty.dev | github.com/Slatyo/slaty.dev
+- **Wisper** — "Private messaging with end-to-end encryption." → wisper.life (NO GitHub link — private repo)
+- **Possessly** — "Inventory tracking for collectors and businesses." → possessly.com (NO GitHub link — private repo)
+- **Haus & Garten Siegerland** — "Business website for property services." → hausundgarten-siegerland.de (NO GitHub link — private repo)
+- **slaty.dev** — "This site." → slaty.dev | github.com/Slatyo/slaty.dev (public repo)
 
 The grid must be easy to extend (add more cards later).
 
