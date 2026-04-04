@@ -90,6 +90,29 @@ The grid must be easy to extend (add more cards later).
 
 ---
 
+---
+
+## 🟠 Polish & SEO Enhancements
+
+### Sitemap + robots.txt
+
+- [x] Generate `public/sitemap.xml` with a single `<url>` entry for `https://slaty.dev`
+- [x] Update `public/robots.txt` to reference the sitemap: `Sitemap: https://slaty.dev/sitemap.xml`
+- [x] Add `<link rel="sitemap" type="application/xml" href="/sitemap.xml">` to `<head>` in `welcome.blade.php`
+
+### apple-touch-icon
+
+- [ ] Add a basic `apple-touch-icon.png` (180x180) or SVG fallback to `public/`
+- [ ] Add `<link rel="apple-touch-icon" href="/apple-touch-icon.png">` to `<head>` in `welcome.blade.php`
+
+### Accessibility audit
+
+- [ ] Verify all interactive elements have visible focus styles (Tailwind `focus-visible:outline`)
+- [ ] Confirm color contrast on zinc-400 text against #0A0A0B background (WCAG AA)
+- [ ] Add `lang="en"` is already on `<html>` — confirm it's correct
+
+---
+
 ## 🏗️ Tech Stack (Target)
 
 | Layer | Tech |

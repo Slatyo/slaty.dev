@@ -19,6 +19,9 @@
     <!-- Canonical -->
     <link rel="canonical" href="https://slaty.dev">
 
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
     <!-- Favicon -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
