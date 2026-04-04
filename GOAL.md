@@ -21,16 +21,16 @@ Strip everything down to a fresh Laravel 12 + Blade + Tailwind site. One page, d
 
 ### Phase 1 — Clean Slate
 
-- [ ] Remove all Inertia.js, Vue, Breeze auth scaffolding, Satisfactory integration
-- [ ] Remove: `resources/js/Pages/`, `app/Services/SatisfactoryApiService.php`, `app/Http/Controllers/SatisfactoryController.php`, `app/Http/Controllers/Auth/`, `app/Http/Controllers/ProfileController.php`
-- [ ] Remove all auth routes from `routes/web.php` and `routes/auth.php`
-- [ ] Remove: `app/Http/Kernel.php`, `app/Console/Kernel.php`, `app/Exceptions/Handler.php` — migrate to Laravel 12 `bootstrap/app.php` format
-- [ ] Remove unused providers: `BroadcastServiceProvider`, `EventServiceProvider`, `AuthServiceProvider`, `RouteServiceProvider`
-- [ ] Remove `@inertiajs/vue3`, `vue`, `@vitejs/plugin-vue` from `package.json`
-- [ ] Clean up `composer.json` — remove `laravel/breeze` if no longer needed
-- [ ] `routes/web.php` becomes just: `Route::get('/', fn () => view('welcome'))->name('home');`
-- [ ] Run `php artisan test` (update/remove broken tests)
-- [ ] Run `npm run build`
+- [x] Remove all Inertia.js, Vue, Breeze auth scaffolding, Satisfactory integration
+- [x] Remove: `resources/js/Pages/`, `app/Services/SatisfactoryApiService.php`, `app/Http/Controllers/SatisfactoryController.php`, `app/Http/Controllers/Auth/`, `app/Http/Controllers/ProfileController.php`
+- [x] Remove all auth routes from `routes/web.php` and `routes/auth.php`
+- [x] Remove: `app/Http/Kernel.php`, `app/Console/Kernel.php`, `app/Exceptions/Handler.php` — migrate to Laravel 12 `bootstrap/app.php` format
+- [x] Remove unused providers: `BroadcastServiceProvider`, `EventServiceProvider`, `AuthServiceProvider`, `RouteServiceProvider`
+- [x] Remove `@inertiajs/vue3`, `vue`, `@vitejs/plugin-vue` from `package.json`
+- [x] Clean up `composer.json` — remove `laravel/breeze` if no longer needed
+- [x] `routes/web.php` becomes just: `Route::get('/', fn () => view('welcome'))->name('home');`
+- [x] Run `php artisan test` (update/remove broken tests)
+- [x] Run `npm run build`
 
 ### Phase 2 — Build the Page
 
