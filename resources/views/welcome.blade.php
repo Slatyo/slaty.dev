@@ -11,6 +11,13 @@
     <meta property="og:title" content="Slaty — Developer & Crafter">
     <meta property="og:description" content="Developer portfolio. Wisper, Possessly, and more.">
     <meta property="og:url" content="https://slaty.dev">
+    <meta property="og:image" content="https://slaty.dev/favicon.svg">
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#0A0A0B">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://slaty.dev">
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -79,9 +86,11 @@
         <p class="hero-fade-delay mt-3 text-lg text-zinc-400">Developer &amp; Crafter</p>
     </header>
 
+    <main id="main-content">
+
     <!-- ─── PROJECTS ─── -->
-    <section class="px-6 pb-20 max-w-3xl mx-auto reveal">
-        <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-6">Projects</h2>
+    <section class="px-6 pb-20 max-w-3xl mx-auto reveal" aria-labelledby="projects-heading">
+        <h2 id="projects-heading" class="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-6">Projects</h2>
 
         <div class="grid gap-4 sm:grid-cols-2">
 
@@ -97,8 +106,8 @@
                     <span class="text-xs px-2 py-0.5 rounded bg-zinc-800 text-zinc-500">E2EE</span>
                 </div>
                 <div class="flex gap-4 mt-auto text-sm">
-                    <a href="https://wisper.life" target="_blank" rel="noopener" class="text-violet-400 hover:text-violet-300 transition-colors">wisper.life ↗</a>
-                    <a href="https://github.com/Slatyo/wisper" target="_blank" rel="noopener" class="text-zinc-500 hover:text-zinc-300 transition-colors">GitHub ↗</a>
+                    <a href="https://wisper.life" target="_blank" rel="noopener noreferrer" aria-label="Wisper — visit wisper.life" class="text-violet-400 hover:text-violet-300 transition-colors">wisper.life ↗</a>
+                    <a href="https://github.com/Slatyo/wisper" target="_blank" rel="noopener noreferrer" aria-label="Wisper on GitHub" class="text-zinc-500 hover:text-zinc-300 transition-colors">GitHub ↗</a>
                 </div>
             </div>
 
@@ -114,8 +123,8 @@
                     <span class="text-xs px-2 py-0.5 rounded bg-zinc-800 text-zinc-500">SaaS</span>
                 </div>
                 <div class="flex gap-4 mt-auto text-sm">
-                    <a href="https://possessly.com" target="_blank" rel="noopener" class="text-violet-400 hover:text-violet-300 transition-colors">possessly.com ↗</a>
-                    <a href="https://github.com/Slatyo/Possessly" target="_blank" rel="noopener" class="text-zinc-500 hover:text-zinc-300 transition-colors">GitHub ↗</a>
+                    <a href="https://possessly.com" target="_blank" rel="noopener noreferrer" aria-label="Possessly — visit possessly.com" class="text-violet-400 hover:text-violet-300 transition-colors">possessly.com ↗</a>
+                    <a href="https://github.com/Slatyo/Possessly" target="_blank" rel="noopener noreferrer" aria-label="Possessly on GitHub" class="text-zinc-500 hover:text-zinc-300 transition-colors">GitHub ↗</a>
                 </div>
             </div>
 
@@ -130,8 +139,8 @@
                     <span class="text-xs px-2 py-0.5 rounded bg-zinc-800 text-zinc-500">Tailwind</span>
                 </div>
                 <div class="flex gap-4 mt-auto text-sm">
-                    <a href="https://hausundgarten-siegerland.de" target="_blank" rel="noopener" class="text-violet-400 hover:text-violet-300 transition-colors">hausundgarten-siegerland.de ↗</a>
-                    <a href="https://github.com/Slatyo/hausundgarten-siegerland" target="_blank" rel="noopener" class="text-zinc-500 hover:text-zinc-300 transition-colors">GitHub ↗</a>
+                    <a href="https://hausundgarten-siegerland.de" target="_blank" rel="noopener noreferrer" aria-label="Haus & Garten Siegerland — visit hausundgarten-siegerland.de" class="text-violet-400 hover:text-violet-300 transition-colors">hausundgarten-siegerland.de ↗</a>
+                    <a href="https://github.com/Slatyo/hausundgarten-siegerland" target="_blank" rel="noopener noreferrer" aria-label="Haus & Garten Siegerland on GitHub" class="text-zinc-500 hover:text-zinc-300 transition-colors">GitHub ↗</a>
                 </div>
             </div>
 
@@ -147,20 +156,22 @@
                     <span class="text-xs px-2 py-0.5 rounded bg-zinc-800 text-zinc-500">Tailwind</span>
                 </div>
                 <div class="flex gap-4 mt-auto text-sm">
-                    <a href="https://slaty.dev" target="_blank" rel="noopener" class="text-violet-400 hover:text-violet-300 transition-colors">slaty.dev ↗</a>
-                    <a href="https://github.com/Slatyo/slaty.dev" target="_blank" rel="noopener" class="text-zinc-500 hover:text-zinc-300 transition-colors">GitHub ↗</a>
+                    <a href="https://slaty.dev" target="_blank" rel="noopener noreferrer" aria-label="slaty.dev — visit slaty.dev" class="text-violet-400 hover:text-violet-300 transition-colors">slaty.dev ↗</a>
+                    <a href="https://github.com/Slatyo/slaty.dev" target="_blank" rel="noopener noreferrer" aria-label="slaty.dev on GitHub" class="text-zinc-500 hover:text-zinc-300 transition-colors">GitHub ↗</a>
                 </div>
             </div>
 
         </div>
     </section>
 
+    </main>
+
     <!-- ─── CONTACT ─── -->
-    <footer class="px-6 pb-20 max-w-3xl mx-auto reveal">
-        <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">Contact</h2>
+    <footer class="px-6 pb-20 max-w-3xl mx-auto reveal" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" class="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">Contact</h2>
         <div class="flex flex-wrap gap-6 text-sm">
-            <a href="mailto:info@slaty.dev" class="text-violet-400 hover:text-violet-300 transition-colors">info@slaty.dev</a>
-            <a href="https://github.com/Slatyo" target="_blank" rel="noopener" class="text-zinc-500 hover:text-zinc-300 transition-colors">github.com/Slatyo ↗</a>
+            <a href="mailto:info@slaty.dev" aria-label="Send email to info@slaty.dev" class="text-violet-400 hover:text-violet-300 transition-colors">info@slaty.dev</a>
+            <a href="https://github.com/Slatyo" target="_blank" rel="noopener noreferrer" aria-label="Slaty on GitHub" class="text-zinc-500 hover:text-zinc-300 transition-colors">github.com/Slatyo ↗</a>
         </div>
     </footer>
 

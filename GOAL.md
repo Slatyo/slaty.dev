@@ -77,16 +77,16 @@ The grid must be easy to extend (add more cards later).
 - [x] OG tags: og:title, og:description, og:url (`https://slaty.dev`)
 - [x] Favicon (simple SVG in `public/`)
 - [x] JSON-LD Person schema with name + url + sameAs (GitHub link)
-- [ ] Lighthouse target: 95+ all categories
+- [x] Lighthouse target: 95+ all categories
 
 ### Phase 4 — Cleanup
 
-- [ ] Remove all unused test files that reference auth/Satisfactory
-- [ ] Remove `resources/js/Pages/` directory entirely (no more Vue pages)
-- [ ] Remove `Documentation.vue`, `Satisfactory.vue`, `Dashboard.vue`, all auth pages
-- [ ] Verify `npm run build` produces a clean bundle (Tailwind CSS only, no Vue)
-- [ ] Final `php artisan test` — green
-- [ ] Commit + push
+- [x] Remove all unused test files that reference auth/Satisfactory
+- [x] Remove `resources/js/Pages/` directory entirely (no more Vue pages)
+- [x] Remove `Documentation.vue`, `Satisfactory.vue`, `Dashboard.vue`, all auth pages
+- [x] Verify `npm run build` produces a clean bundle (Tailwind CSS only, no Vue)
+- [x] Final `php artisan test` — green
+- [x] Commit + push
 
 ---
 
