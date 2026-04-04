@@ -107,9 +107,9 @@ The grid must be easy to extend (add more cards later).
 
 ### Accessibility audit
 
-- [ ] Verify all interactive elements have visible focus styles (Tailwind `focus-visible:outline`)
-- [ ] Confirm color contrast on zinc-400 text against #0A0A0B background (WCAG AA)
-- [ ] Add `lang="en"` is already on `<html>` — confirm it's correct
+- [x] Verify all interactive elements have visible focus styles (Tailwind `focus-visible:outline`)
+- [x] Confirm color contrast on zinc-400 text against #0A0A0B background (WCAG AA)
+- [x] Add `lang="en"` is already on `<html>` — confirm it's correct
 
 ---
 
