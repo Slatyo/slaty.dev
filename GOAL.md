@@ -102,8 +102,8 @@ The grid must be easy to extend (add more cards later).
 
 ### apple-touch-icon
 
-- [ ] Add a basic `apple-touch-icon.png` (180x180) or SVG fallback to `public/`
-- [ ] Add `<link rel="apple-touch-icon" href="/apple-touch-icon.png">` to `<head>` in `welcome.blade.php`
+- [x] Add a basic `apple-touch-icon.png` (180x180) or SVG fallback to `public/`
+- [x] Add `<link rel="apple-touch-icon" href="/apple-touch-icon.png">` to `<head>` in `welcome.blade.php`
 
 ### Accessibility audit
 
