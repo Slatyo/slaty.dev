@@ -63,20 +63,20 @@ The grid must be easy to extend (add more cards later).
 
 **No about section. No life story. No buzzwords.**
 
-- [ ] Create `resources/views/welcome.blade.php` — single file, all sections
-- [ ] Dark theme: background `#0A0A0B`, text `#E4E4E7`, one subtle accent color for links
-- [ ] System font stack (no web fonts)
-- [ ] Fully responsive (mobile-first)
-- [ ] Subtle CSS animations only: section fade-in on scroll, card hover scale (1.02x), hero text fade on load
-- [ ] No JavaScript framework — pure Blade + Tailwind + vanilla JS for scroll observer
+- [x] Create `resources/views/welcome.blade.php` — single file, all sections
+- [x] Dark theme: background `#0A0A0B`, text `#E4E4E7`, one subtle accent color for links
+- [x] System font stack (no web fonts)
+- [x] Fully responsive (mobile-first)
+- [x] Subtle CSS animations only: section fade-in on scroll, card hover scale (1.02x), hero text fade on load
+- [x] No JavaScript framework — pure Blade + Tailwind + vanilla JS for scroll observer
 
 ### Phase 3 — SEO & Meta
 
-- [ ] `<title>Slaty — Developer & Crafter</title>`
-- [ ] `<meta name="description" content="Developer portfolio. Wisper, Possessly, and more.">`
-- [ ] OG tags: og:title, og:description, og:url (`https://slaty.dev`)
-- [ ] Favicon (simple SVG in `public/`)
-- [ ] JSON-LD Person schema with name + url + sameAs (GitHub link)
+- [x] `<title>Slaty — Developer & Crafter</title>`
+- [x] `<meta name="description" content="Developer portfolio. Wisper, Possessly, and more.">`
+- [x] OG tags: og:title, og:description, og:url (`https://slaty.dev`)
+- [x] Favicon (simple SVG in `public/`)
+- [x] JSON-LD Person schema with name + url + sameAs (GitHub link)
 - [ ] Lighthouse target: 95+ all categories
 
 ### Phase 4 — Cleanup
