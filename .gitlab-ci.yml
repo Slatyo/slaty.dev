@@ -1,0 +1,37 @@
+image: docker:24
+
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_TLS_CERTDIR: ""
+  IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+  SERVICE_NAME: slaty-dev-local_app
+  LOCAL_ENVIRONMENT_URL: https://slatydev.slatypi.lan
+
+services:
+  - docker:24-dind
+
+stages:
+  - build
+  - deploy
+
+before_script:
+  - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
+
+build:
+  stage: build
+  script:
+    - docker build --pull -t "$IMAGE_TAG" .
+    - docker push "$IMAGE_TAG"
+  only:
+    - main
+
+deploy_local:
+  stage: deploy
+  image: docker:24
+  script:
+    - docker service update --image "$IMAGE_TAG" --with-registry-auth "$SERVICE_NAME"
+  environment:
+    name: local
+    url: https://slatydev.slatypi.lan
+  only:
+    - main
